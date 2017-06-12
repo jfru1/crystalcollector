@@ -2,6 +2,7 @@ $(document).ready(function(){
 
 // defines game properties, ty sublime for letting me just hit enter instead of typing out 'properties' a hundred times
 var gameProperties = {
+	
 	init: { 
 		// maximum value for our target is 80
 		targetPts:  Math.floor(Math.random() * (80 - 19 + 1) + 19), 
@@ -38,14 +39,16 @@ $("#targetPts").html("Target Points: " + gameProperties.init.targetPts);
 $(".crystal").on("click", function(){
 	$("#gameAlert").html("");
 	var g = "gameProperties.crystals."+$(this).attr("id")+".val";
-	gameProperties.init.currentPts += eval(g);
-	gameProperties.render.dispCurrentPts.html("Current Points: " + gameProperties.init.currentPts);
+		gameProperties.init.currentPts += eval(g);
+		gameProperties.render.dispCurrentPts.html("Current Points: " + gameProperties.init.currentPts);
 
 		if (gameProperties.init.currentPts === gameProperties.init.targetPts){
 			gameProperties.init.wins++;
 			$("#gameAlert").html("You've Won!");
 			resetGame();
-		} else if (gameProperties.init.currentPts > gameProperties.init.targetPts){
+		} 
+
+		else if (gameProperties.init.currentPts > gameProperties.init.targetPts){
 			gameProperties.init.losses++;
 			$("#gameAlert").html("You've Lost!");
 			resetGame();
@@ -54,15 +57,15 @@ $(".crystal").on("click", function(){
 // resets the game, player value set to zero, crystals get new values, new target defined
 function resetGame(){
 	gameProperties.init.targetPts = Math.floor(Math.random() * (80 - 19 + 1) + 19);
-	gameProperties.crystals.cryst1.val = Math.floor(Math.random() * (12 - 1 + 1) + 1);
-	gameProperties.crystals.cryst2.val = Math.floor(Math.random() * (12 - 1 + 1) + 1);
-	gameProperties.crystals.cryst3.val = Math.floor(Math.random() * (12 - 1 + 1) + 1);
-	gameProperties.crystals.cryst4.val = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+		gameProperties.crystals.cryst1.val = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+		gameProperties.crystals.cryst2.val = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+		gameProperties.crystals.cryst3.val = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+		gameProperties.crystals.cryst4.val = Math.floor(Math.random() * (12 - 1 + 1) + 1);
 	$("#targetPts").html("Target Points: " + gameProperties.init.targetPts);
-	gameProperties.init.currentPts = 0;
-	gameProperties.render.dispCurrentPts.html("Current Points: " + gameProperties.init.currentPts);
-	gameProperties.render.dispWinCount.html("Wins: " + gameProperties.init.wins);
-	gameProperties.render.dispLossCount.html("Losses: " + gameProperties.init.losses);
+		gameProperties.init.currentPts = 0;
+		gameProperties.render.dispCurrentPts.html("Current Points: " + gameProperties.init.currentPts);
+		gameProperties.render.dispWinCount.html("Wins: " + gameProperties.init.wins);
+		gameProperties.render.dispLossCount.html("Losses: " + gameProperties.init.losses);
 
 }
 });
