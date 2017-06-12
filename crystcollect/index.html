@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Crystal Collector</title>
+	<link href="https://fonts.googleapis.com/css?family=Revalia:600" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="sidebar">
+			<h1>Crystal Collector</h1>
+			<ol>
+				<li>Each crystal has its own value, you can collect it into your score by clicking it!</li>
+				<li>Win the game by matching your score with the given target score!</li>
+				<li>Be careful not to exceed the target, or you'll lose!</li>
+			</ol>
+			<div id="gameAlert"></div>
+		</div>
+		<div class="gameWindow">
+			<div id="crystalDiv">
+				<ul>
+					<li><img src="assets/imgs/cryst1.png" alt="" id="cryst1" class="crystal"> </li>
+					<li><img src="assets/imgs/cryst2.png" alt="" id="cryst2" class="crystal"> </li>
+					<li><img src="assets/imgs/cryst3.png" alt="" id="cryst3" class="crystal"> </li>
+					<li><img src="assets/imgs/cryst4.png" alt="" id="cryst4" class="crystal"> </li>
+				</ul>
+			</div>
+			<div class="gameVariables">
+				<span class="gameVars" id="targetPts">Target Points: </span>
+				<span class="gameVars" id="currentPts">Current Points: 0</span>
+				<span class="gameVars" id="wins">Wins: 0</span>
+				<span class="gameVars" id="losses">Losses: 0</span>
+			</div>
+		</div>
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/js/game.js"></script>	
+</body>
+</html>
